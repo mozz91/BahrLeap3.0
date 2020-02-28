@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {CustomHeader} from "..";
+import BottomTabNavigator from "@react-navigation/bottom-tabs/src/navigators/createBottomTabNavigator";
+import TabNavigator from '../../App';
 
 
 export class PublicationsScreen extends Component{
@@ -10,14 +12,10 @@ export class PublicationsScreen extends Component{
             <CustomHeader title="BAHR" isHome={true} navigation={this.props.navigation}/>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                 <Text>Publications screen!</Text>
-                <TouchableOpacity
-                    style={{marginTop: 20}}
-                    onPress={() => this.props.navigation.navigate('SettingDetail')}
-                >
-                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
+
 
     }
 }

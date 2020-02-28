@@ -10,11 +10,6 @@ export class BookmarksScreen extends Component{
             <CustomHeader title="BAHR" isHome={true} navigation={this.props.navigation}/>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                 <Text>Bookmarks screen!</Text>
-                <TouchableOpacity
-                    style={{marginTop: 20}}
-                    onPress={() => this.props.navigation.navigate('SettingDetail')}
-                >
-                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );

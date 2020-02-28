@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {IMAGE} from "../constants/image";
+import BAHRcastsScreen from '../screens/BAHRcastsScreen'
 
 export class CustomDrawerContent extends Component {
     render() {
@@ -41,7 +42,7 @@ export class CustomDrawerContent extends Component {
 
                     <TouchableOpacity
                         style={{marginTop: 20}}
-                        onPress={() => this.props.navigation.navigate('BAHRCasts')}
+                        onPress={() => this.props.navigation.navigate('BAHRcasts')}
                     >
                         <Text style={{color: 'rgb(231, 81, 30)'}}>BAHRcasts and Videos</Text>
                     </TouchableOpacity>

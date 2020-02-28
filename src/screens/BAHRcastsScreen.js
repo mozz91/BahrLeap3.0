@@ -16,3 +16,5 @@ export class BAHRcastsScreen extends Component{
 
     }
 }
+
+export default BAHRcastsScreen;

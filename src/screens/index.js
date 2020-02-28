@@ -5,6 +5,7 @@ export * from './AssetManagmentScreen'
 export * from './ServicesScreen'
 export * from './SeminarsScreen'
 export * from './PublicationsScreen'
+export * from './BAHRcastsScreen'
 
 
 export * from './SettingsScreen'

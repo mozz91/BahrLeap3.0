@@ -14,6 +14,7 @@ import {
 import { NotificationsScreen } from "./src/screens";
 import { RegisterScreen, LoginScreen } from "./src/screens";
 import { IMAGE } from "./src/constants/image";
+import {BAHRcastsScreen} from "./src/screens/BAHRcastsScreen";
 
 const navOptionHandler = () => ({
     headerShown: false
@@ -56,7 +57,7 @@ const StackPublications = createStackNavigator()
 function PublicationsStack(){
     return(
         <StackPublications.Navigator initialRouterName="Publications">
-            <StackPublications.Screen name="Publications0" component={PublicationsScreen} options={navOptionHandler} />
+            <StackPublications.Screen name="Publications" component={PublicationsScreen} options={navOptionHandler} />
         </StackPublications.Navigator>
     )
 }
@@ -89,6 +90,17 @@ function BookmarksStack() {
         <StackBookmarks.Navigator initialRouterName="Boookmarks">
             <StackBookmarks.Screen name="Bookmarks" component={BookmarksScreen} options={navOptionHandler} />
         </StackBookmarks.Navigator>
+    )
+}
+
+const StackBAHRcasts = createStackNavigator()
+
+function BAHRcastsStack({navigation}) {
+    navigation.setOptions({ TabNavigator: true })
+    return(
+        <StackBAHRcasts.Navigator initialRouterName="BAHRcasts">
+            <StackBAHRcasts.Screen name="BAHRcasts" component={BAHRcastsScreen} options={navOptionHandler} />
+        </StackBAHRcasts.Navigator>
     )
 }
 
@@ -130,7 +142,6 @@ function TabNavigator() {
             tabBarOptions={{
                 activeTintColor: 'blue',
                 inactiveTintColor: 'gray',
-
             }}
 
         >
@@ -151,14 +162,16 @@ function DrawerNavigator({navigation}) {
         <Drawer.Navigator initialRouteName="MenuTab"
             drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
             <Drawer.Screen name="MenuTab" component={TabNavigator} />
-            <Drawer.Screen name="Insight" component={HomeScreen} />
+            <Drawer.Screen name="Publications" component={PublicationsStack} />
+            <Drawer.Screen name="BAHRcasts" component={BAHRcastsStack} />
+{/*            <Drawer.Screen name="Insight" component={HomeScreen} />
             <Drawer.Screen name="Asset Managment" component={AssetManagmentScreen} />
-            <Drawer.Screen name="Seminars" component={SeminarsScreen} />
-            <Drawer.Screen name="Publications" component={PublicationsScreen} />
+
+            <Drawer.Screen name="Seminars" component={SeminarsScreen} />*/}
             {/*<Drawer.Screen name="Notifications" component={NotificationsScreen} />*/}
+
         </Drawer.Navigator>
     )
-
 }
 
 const StackApp = createStackNavigator();
